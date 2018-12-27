@@ -50,6 +50,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyView
                     listener.onProductSelected(products.get(getAdapterPosition()));
                 }
             });
+
         }
     }
 

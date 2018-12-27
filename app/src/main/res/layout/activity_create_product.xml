@@ -59,6 +59,15 @@
         android:text="Crear"
         android:id="@+id/btn_crear"/>
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:textColor="#000"
+        android:backgroundTint="#ffc107"
+        android:visibility="gone"
+        android:text="Eliminar"
+        android:id="@+id/btn_eliminar"/>
+    <Button
         style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
         android:backgroundTint="#f00"
         android:textColor="#fff"

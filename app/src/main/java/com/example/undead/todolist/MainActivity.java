@@ -2,11 +2,13 @@ package com.example.undead.todolist;
 
 import android.app.Activity;
 import android.app.DownloadManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -31,7 +33,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class MainActivity extends AppCompatActivity implements ProductsAdapter.ProductsAdapterListener {
+public class MainActivity extends AppCompatActivity implements ProductsAdapter.ProductsAdapterListener{
 
     private final String CLASSNAME = this.getClass().getSimpleName();
 
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements ProductsAdapter.P
                 ApiClient.getInstance(getApplicationContext()).addToRequestQueue(gsonGetRequest);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
+
             }
         }
     }
@@ -104,8 +106,6 @@ public class MainActivity extends AppCompatActivity implements ProductsAdapter.P
         return new Response.Listener<ArrayList<Product>>() {
             @Override
             public void onResponse(ArrayList<Product> response) {
-                // Do whatever you want to do with response;
-                // Like response.tags.getListing_count(); etc. etc.
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     response.forEach((r)->
                             Log.wtf(CLASSNAME, String.valueOf(r.id))
@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements ProductsAdapter.P
         return new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // Do whatever you want to do with error.getMessage();
                 Log.wtf("ERROR",error.getMessage());
             }
         };
@@ -161,5 +160,12 @@ public class MainActivity extends AppCompatActivity implements ProductsAdapter.P
     @Override
     public void onProductSelected(Product product) {
         Log.wtf("CLICKED",product.descripcion);
+        Intent i = new Intent(MainActivity.this,CreateProductActivity.class);
+        i.putExtra("nombre",product.nombre);
+        i.putExtra("cantidad",String.valueOf(product.cantidad));
+        i.putExtra("descripcion",product.descripcion);
+        i.putExtra("id",String.valueOf(product.id));
+        startActivityForResult(i,1);
     }
+
 }

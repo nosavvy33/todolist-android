@@ -6,4 +6,6 @@ public class Constant {
     public static String REST_ROOT = "https://ide50-sicked-sunday.cs50.io:8080/api";
     public static String REST_POST = "/products";
     public static String REST_GET = "/products";
+    public static String REST_PATCH = "/products/";
+    public static String REST_DELETE = "/products/";
 }
