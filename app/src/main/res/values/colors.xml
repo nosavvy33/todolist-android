@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="warningButton">#ffc107</color>
+    <color name="cancelButton">#f00</color>
+    <color name="createButton">#428bca</color>
+    <color name="whiteText">#fff</color>
+    <color name="blackText">#000</color>
 </resources>

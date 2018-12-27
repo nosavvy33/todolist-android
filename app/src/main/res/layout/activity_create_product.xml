@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Nombre del producto"
+        android:text="@string/nombre_del_producto"
         android:textAlignment="center"/>
     <EditText
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Cantidad"
+        android:text="@string/cantidad"
         android:textAlignment="center"/>
     <EditText
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Descripción"
+        android:text="@string/descripci_n"
         android:textAlignment="center"/>
     <EditText
         android:layout_width="match_parent"
@@ -54,26 +54,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-        android:textColor="#fff"
-        android:backgroundTint="#428bca"
-        android:text="Crear"
+        android:textColor="@color/whiteText"
+        android:backgroundTint="@color/createButton"
+        android:text="@string/crear"
         android:id="@+id/btn_crear"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-        android:textColor="#000"
-        android:backgroundTint="#ffc107"
+        android:textColor="@color/blackText"
+        android:backgroundTint="@color/warningButton"
         android:visibility="gone"
-        android:text="Eliminar"
+        android:text="@string/eliminar"
         android:id="@+id/btn_eliminar"/>
     <Button
         style="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-        android:backgroundTint="#f00"
-        android:textColor="#fff"
+        android:backgroundTint="@color/cancelButton"
+        android:textColor="@color/whiteText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="@string/cancelar"
         android:id="@+id/btn_cancelar"/>
 
 
